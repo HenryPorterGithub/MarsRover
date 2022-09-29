@@ -1,0 +1,90 @@
+﻿@page
+@model ReadMeModel
+@{
+    ViewData["Title"] = "ReadMe";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <h1 class="text-center">@ViewData["Title"]</h1>
+            <br />
+            <h3 class="text-center">Documentation</h3>
+            <br />
+            <p>For your consideration, a simple program that simulates the movement of two Mars Rovers.</p>
+            <br />
+            <p>The base project is an <strong>ASP.NET Core Web App</strong></p>
+            <br />
+            <p>The HTML for the interface can be found in <strong>Index.cshtml</strong></p>
+            <br />
+            <p>All movement calculations are performed using the Javascript in <strong>site.js</strong></p>
+            <br />
+            <p><strong>MoveRover()</strong> is the primary function which calls two nested functions</p>
+            <br />
+            <p><strong>ChangeDirection()</strong> and <strong>DoMovement()</strong> are called depending on which command is active in the input string</p>
+            <br />
+            <p>You can configure the input as you wish, but you can break the calculations with invalid characters</p>
+            <br />
+            <p>Solutions to this programming challenge are all over the internet; I did not view or use them</p>
+            <br />
+            <h3 class="text-center">Commentary</h3>
+            <br />
+            <p><strong>Required Field Validation</strong> could prevent this</p>
+            <br />
+            <p>The Javascript is client-side so server-side validation would not work</p>
+            <br />
+            <p>Client-side RFV is best for user experience purposes, but it is easily bypassed with inspect element</p>
+            <br />
+            <p>Server-side RFV can be used to enhance security, for example by preventing SQL injection</p>
+            <br />
+            <p>This is especially important in scenarios where dynamic SQL is used in C#, a major security problem which one should never do</p>
+            <br />
+            <p>If you must choose one form of RFV, you should use server-side</p>
+            <br />
+            <p>Unit Testing could be used to gain some protection against unexpected scenarios</p>
+            <br />
+            <p>Automated Testing is a critical part of contemporary <strong>CI/CD</strong>, I use it myself in my <strong>Automated Release and Testing Pipelines</strong></p>
+            <br />
+            <p>For example, one could create unit tests that randomly change the inputs and then evaluate the output against an expected standard</p>
+            <br />
+            <p>My team and I pioneered the implementation of CI/CD, DevOps, Automation and Security enhancements throughout my time in my current position</p>
+            <br />
+            <p>Proper unit testing is challenging because you need to have a good understanding of what you are building your tests against</p>
+            <br />
+            <p>It is possible to rip the Javascript out of this project, then host it on a <strong>Cloud Platform</strong> like Azure or AWS</p>
+            <br />
+            <p>Cloud <strong>Microservices</strong> can be called externally with an API, thereby transferring the computational burden to a scalable environment</p>
+            <br />
+            <p>I lead multiple projects as a part of our company-wide <strong>Cloud Migration</strong> which my team instigated</p>
+            <br />
+            <p>Microservices are easily monitorable, in my current position I commonly create tools and pipelines for data and business analytics</p>
+            <br />
+            <p>Every aspect of the usage of the Mars Rover microservice could be analyzed, from SQL Parallelism patterns and CPU loads for internal use, to KPIs on customer engagement with the tool for the wider business</p>
+            <br />
+            <p>I do these tasks in a role I created for myself in my current position</p>
+            <br />
+            <p>With respect to the front-end, I generated a palette based on Beige using an online tool, and created a border using a simple cascade</p>
+            <br />
+            <p>There is very little CSS used here and rightfully so</p>
+            <br />
+            <p>That said, I am confident with advanced CSS skills like Flexbox and Keyframes</p>
+            <br />
+            <p>Contemporary front-end development should be <strong>low-code/no-code</strong> using frameworks like <strong>ReactJS/Blazor</strong> and component libraries like <strong>MUI/MudBlazor</strong></p>
+            <br />
+            <p>I am experienced in all of them</p>
+            <br />
+            <p>I led all <strong>Redesign, Accessibility and Responsiveness</strong> projects in my current position</p>
+            <br />
+            <p>The only sustainable, low-maintence, low-debt method for accessibility is to use components from libraries which are developed to WCAG standards</p>
+            <br />
+            <p>Thanks to Bootstrap this project is mobile-responsive (touch-wood, I tested it myself but without my normal suite of simulation tools)</p>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+
+</div>
+
+
+
+
