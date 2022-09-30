@@ -11,6 +11,14 @@ Normally, a form using C# must reload the entire page when posting content for s
 
 That is not necessary here because of the magic of Razor. This is a trait it has in common with ReactJS and Blazor, two other frameworks I know!
 
+# Usage
+
+Clone and run. No libraries, extensions or anything else to worry about. Once it loads, you can calculate the movements of the Rovers with the buttons on screen.
+
+# Testing
+
+I tested this locally and after cloning to a second computer. Absolutely no problems whatsoever.
+
 # Documentation
 
 For your consideration, a simple program that simulates the movement of two Mars Rovers.
