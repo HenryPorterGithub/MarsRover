@@ -11,187 +11,102 @@
 
 
 <div class="row text-center" id="divMarsRover">
+
     @*Rover 1*@
-    <form method="post">
-        <div class="col-sm-6">
+    <div class="col-sm-6">
+        <form method="post">
             <h3 class="display-6">First Rover</h3>
             <br />
+            <label for="id1">ID</label>
+            <br />
+            <input asp-for="id" type="text" id="id1" value="1" readonly><br><br>
+            @*X*@
             <label for="xStartMR1">Starting X</label>
             <br />
-            <input type="number" id="xStartMR1" name="xStartMR1" value="1" required />
+            <input asp-for="X" type="number" id="xStartMR1" value="1" required />
             <br />
             <br />
+            @*Y*@
             <label for="yStartMR1">Starting Y</label>
             <br />
-            <input type="number" id="yStartMR1" name="yStartMR1" value="2" required />
+            <input asp-for="Y" type="number" id="yStartMR1" value="2" required />
             <br />
             <br />
+            @*Direction*@
             <label for="dStartMR1">Starting Direction</label>
             <br />
-            <input type="text" id="dStartMR1" name="dStartMR1" value="N" required />
+            <input asp-for="Direction" type="text" id="dStartMR1" value="N" required />
             <br />
             <br />
+            @*Movements*@
             <label for="MoveMR1">Movements</label>
             <br />
-            <input type="text" id="MoveMR1" name="MoveMR1" value="LMLMLMLMM" />
+            <input asp-for="Movements" type="text" id="MoveMR1" value="LMLMLMLMM" />
             <br />
             <br />
-            <button onclick="MoveRover(parseInt(xStartMR1.value), parseInt(yStartMR1.value), dStartMR1.value, MoveMR1.value, 'OutputMR1')">Move First Rover JS</button>
-            <br />
-            <br />
-            <p>First Rover Output JS<br /><span id="OutputMR1"></span></p>
-            <br />
-            <br />
+            @*Submit*@
             <input type="submit" name="submit" value="Move First Rover C#" />
             <br />
+            <label>
+                @{
+                    @Html.Raw(@IndexModel.Output1)
+                }
+            </label>
             <br />
-            <p>First Rover Output C#<br /><span id="OutputMR1c"></span></p>
             <br />
-            <br />
-        </div>
-    </form>
+        </form>
+        <button onclick="MoveRover(parseInt(xStartMR1.value), parseInt(yStartMR1.value), dStartMR1.value, MoveMR1.value, 'OutputMR1')">Move First Rover JS</button>
+        <br />
+        <p>First Rover Output JS<br /><span id="OutputMR1"></span></p>
+        <br />
+    </div>
+
     @*Rover 2*@
-    <form method="post">
-        <div class="col-sm-6">
+    <div class="col-sm-6">
+        <form method="post">
             <h3 class="display-6">Second Rover</h3>
             <br />
+            <label for="id2">ID</label>
+            <br />
+            <input asp-for="id" type="text" id="id2" value="2" readonly><br><br>
+            @*X*@
             <label for="xStartMR2">Starting X</label>
             <br />
-            <input type="number" id="xStartMR2" name="xStartMR2" value="3" required />
+            <input asp-for="X" type="number" id="xStartMR2" value="3" required />
             <br />
             <br />
+            @*Y*@
             <label for="yStartMR2">Starting Y</label>
             <br />
-            <input type="number" id="yStartMR2" name="yStartMR2" value="3" required />
+            <input asp-for="Y" type="number" id="yStartMR2" value="3" required />
             <br />
             <br />
+            @*Direction*@
             <label for="dStartMR2">Starting Direction</label>
             <br />
-            <input type="text" id="dStartMR2" name="dStartMR2" value="E" required />
+            <input asp-for="Direction" type="text" id="dStartMR2" value="E" required />
             <br />
             <br />
+            @*Movements*@
             <label for="MoveMR2">Movements</label>
             <br />
-            <input type="text" id="MoveMR2" name="MoveMR2" value="MMRMMRMRRM" />
+            <input asp-for="Movements" type="text" id="MoveMR2" value="MMRMMRMRRM" />
             <br />
             <br />
-            <button onclick="MoveRover(parseInt(xStartMR2.value), parseInt(yStartMR2.value), dStartMR2.value, MoveMR2.value, 'OutputMR2')">Move Second Rover (Javascript)</button>
+            @*Submit*@
+            <input type="submit" name="submit" value="Move Second Rover C#" />
+            <br />
+            <label>
+                @{
+                    @Html.Raw(@IndexModel.Output2)
+                }
+            </label>
             <br />
             <br />
-            <p>Second Rover Output JS<br /><span id="OutputMR2"></span></p>
-            <br />
-            <br />
-            <input type="submit" name="submit" value="Move First Rover C#" />
-            <br />
-            <br />
-            <p>First Rover Output C#<br /><span id="OutputMR2c"></span></p>
-            <br />
-            <br />
-        </div>
-    </form>
+        </form>
+        <button onclick="MoveRover(parseInt(xStartMR2.value), parseInt(yStartMR2.value), dStartMR2.value, MoveMR2.value, 'OutputMR2')">Move Second Rover JS</button>
+        <br />
+        <p>Second Rover Output JS<br /><span id="OutputMR2"></span></p>
+        <br />
+    </div>
 </div>
-
-@*@Html.Raw(HttpUtility.HtmlDecode(MoveRover(xStartMR2.ToTint(), yStartMR2.ToInt(), dStartMR2.value, MoveMR2.value))))*@
-
-@functions {
-    string MoveRover(int xStart, int yStart, char dStart, string MoveMR)
-    {
-        char Direction = dStart;
-        //C# should begin counting from 1, but I digress
-        int[] XY = new int[1];
-        XY[0] = xStart;
-        XY[1] = yStart;
-        int ActionCount = MoveMR.Length;
-
-        //Perform movement actions with two helper functions
-        for (var i = 0; i < ActionCount; i++)
-        {
-            char Command = MoveMR[i];
-
-            if (Command == 'M')
-            {
-                XY = DoMovement(Direction, XY);
-            }
-            else
-            {
-                Direction = ChangeDirection(Direction, Command);
-            }
-        }
-
-        //Declare output string and return it to in-line C# using Razor;
-        string strOutput = "X=" + XY[0].ToString() + " ,Y=" + XY[1].ToString() + ", D=" + Direction;
-        return strOutput;
-    }
-
-    char ChangeDirection(char OldDirection, char LR)
-    {
-        char NewDirection = '\0';
-
-        switch (OldDirection)
-        {
-            case 'N':
-                if (LR == 'L')
-                {
-                    NewDirection = 'W';
-                }
-                if (LR == 'R')
-                {
-                    NewDirection = 'E';
-                }
-                break;
-            case 'E':
-                if (LR == 'L')
-                {
-                    NewDirection = 'N';
-                }
-                if (LR == 'R')
-                {
-                    NewDirection = 'S';
-                }
-                break;
-            case 'S':
-                if (LR == 'L')
-                {
-                    NewDirection = 'E';
-                }
-                if (LR == 'R')
-                {
-                    NewDirection = 'W';
-                }
-                break;
-            case 'W':
-                if (LR == 'L')
-                {
-                    NewDirection = 'S';
-                }
-                if (LR == 'R')
-                {
-                    NewDirection = 'N';
-                }
-                break;
-        }
-
-        return NewDirection;
-    }
-
-    int[] DoMovement(char Direction, int[] xy)
-    {
-        switch (Direction)
-        {
-            case 'N':
-                xy[2] += 1;
-                break;
-            case 'E':
-                xy[1] += 1;
-                break;
-            case 'S':
-                xy[2] -= 1;
-                break;
-            case 'W':
-                xy[1] -= 1;
-                break;
-
-        }
-        return xy;
-    }
-}
